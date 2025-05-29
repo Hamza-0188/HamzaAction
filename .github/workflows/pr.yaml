@@ -1,0 +1,29 @@
+name: pr_validation
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - closed
+    branches:
+      - develop
+
+  push:
+    branches:
+      - develop
+
+jobs:
+  pr-validation-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Welcome Step
+        run: echo "Welcome to GitHub Actions!"
+
+      - name: Second Step
+        run: echo "This is the second step of the PR validation job."
+
+      - name: Step when PR is merged
+        run: echo "The pull request was merged into the develop branch."
+
